@@ -8,21 +8,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Now Playing"
         android:layout_gravity="center"
-        />
+        android:text="Now Playing" />
 
     <TextView
+        android:id="@+id/now_playing_song"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Song Name" />
 
     <TextView
+        android:id="@+id/now_playing_artist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Artist Name" />
-
-
 
 
 </LinearLayout>

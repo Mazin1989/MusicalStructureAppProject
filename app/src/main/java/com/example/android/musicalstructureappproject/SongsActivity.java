@@ -3,6 +3,7 @@ package com.example.android.musicalstructureappproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -40,23 +41,28 @@ public class SongsActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
 
-        /** Add onClickListener to allow user to click on any item list and it jumps to Now Playing
-         * Screen with the name of the Song and Artist
-         *  !!!!! Find a way to do this using Object Song !!!!!
-         */
-        // Find the View that shows the numbers category
-        ListView nowPlaying = (ListView) findViewById(R.id.list);
-
-        // Set a click listener on that View
-        nowPlaying.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the songs View is clicked on.
-            @Override
-            public void onClick(View view) {
-                Intent nowPlayingIntent = new Intent(SongsActivity.this, SongPlaying.class);
-                startActivity(nowPlayingIntent);
+        listView.setOnItemClickListener(new OnItemClickListener() {
+            /**
+             * Method to identify ListView item clicked and launch NowPlayingActivity
+             */
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                // Get the selected song.
+                Song currentSong = (Song) adapterView.getItemAtPosition(position);
+                // Extract strings from Song object.
+                String mSongName = currentSong.getSongName();
+                String mArtistName = currentSong.getArtistName();
+                // Sending the name and artist of song to NowPlayingActivity.
+                Intent songIntent = new Intent(this, NowPlaying.class);
+                songIntent.putExtra("name", mSongName);
+                songIntent.putExtra("artist", mArtistName);
+                startActivity(songIntent);
             }
 
         });
-    }
 
+
+    }
 }
+
+
+
