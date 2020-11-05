@@ -41,10 +41,12 @@ public class SongsActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
 
-        listView.setOnItemClickListener(new OnItemClickListener() {
-            /**
-             * Method to identify ListView item clicked and launch NowPlayingActivity
-             */
+        /**
+         * Method to identify ListView item clicked and launch NowPlayingActivity
+         */
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 // Get the selected song.
                 Song currentSong = (Song) adapterView.getItemAtPosition(position);
@@ -59,7 +61,6 @@ public class SongsActivity extends AppCompatActivity {
             }
 
         });
-
 
     }
 }
