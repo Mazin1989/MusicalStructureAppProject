@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Musical Structure App Project</string>
     <string name="song_list">Song List</string>
+    <string name="now_playing_text_view">Now Playing</string>
+    <string name="tv_song_name_now_playing">Song Name</string>
+    <string name="tv_artist_name_now_playing">Artist Name</string>
 </resources>

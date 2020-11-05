@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class SongsActivity extends AppCompatActivity {
 
@@ -54,12 +54,11 @@ public class SongsActivity extends AppCompatActivity {
                 String mSongName = currentSong.getSongName();
                 String mArtistName = currentSong.getArtistName();
                 // Sending the name and artist of song to NowPlayingActivity.
-                Intent songIntent = new Intent(this, NowPlaying.class);
+                Intent songIntent = new Intent(SongsActivity.this, NowPlaying.class);
                 songIntent.putExtra("name", mSongName);
                 songIntent.putExtra("artist", mArtistName);
                 startActivity(songIntent);
             }
-
         });
 
     }
