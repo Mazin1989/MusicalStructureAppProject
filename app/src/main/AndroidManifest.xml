@@ -15,7 +15,8 @@
             android:label="@string/song_list" />
 
         <activity
-            android:name=".NowPlaying" />
+            android:name=".NowPlaying"
+            android:label="@string/now_playing_text_view" />
 
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -19,7 +19,7 @@ public class SongsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.songs);
 
-        //create an ArrayList of String with the songs values
+        //create an ArrayList of Song with the song values (song name & artist name)
         ArrayList<Song> songs = new ArrayList<Song>();
 
         songs.add(new Song("In The End", "Linkin Park"));
@@ -32,6 +32,9 @@ public class SongsActivity extends AppCompatActivity {
         songs.add(new Song("Superhero", "Chingy"));
         songs.add(new Song("Viva La Vida", "Coldplay"));
         songs.add(new Song("Give Your Heart A Break", "Demi Lovato"));
+        songs.add(new Song("Burning Sword", "Falcom"));
+        songs.add(new Song("Again", "Yui"));
+
 
 
         SongAdapter adapter = new SongAdapter(this, songs);
