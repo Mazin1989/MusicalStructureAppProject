@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,6 +20,12 @@ public class SongsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.songs);
+
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
+
+        // Enable the Up button
+        ab.setDisplayHomeAsUpEnabled(true);
 
         //create an ArrayList of Song with the song values (song name & artist name)
         ArrayList<Song> songs = new ArrayList<Song>();
@@ -34,7 +42,6 @@ public class SongsActivity extends AppCompatActivity {
         songs.add(new Song("Give Your Heart A Break", "Demi Lovato"));
         songs.add(new Song("Burning Sword", "Falcom"));
         songs.add(new Song("Again", "Yui"));
-
 
 
         SongAdapter adapter = new SongAdapter(this, songs);
